@@ -2,7 +2,7 @@ h2 {
   margin-bottom: 20px;
 }
 
-.error {
+.error-form {
   color: red;
   margin: 5px;
 }
@@ -19,7 +19,7 @@ h2 {
   justify-content: center;
 }
 
-.close, .edit {
+.close-modal, .edit-open-modal {
   position: absolute;
   top: 10px;
   right: 10px;

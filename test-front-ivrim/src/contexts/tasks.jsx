@@ -5,7 +5,8 @@ import { verifyStatusByIndex } from '../hook/verifyStatus';
 
 export const TasksContext = createContext({
   lists: [],
-  move: () => { }
+  move: () => { },
+  getList: () => { }
 });
 
 export const TasksProvider = ({ children }) => {
@@ -27,7 +28,7 @@ export const TasksProvider = ({ children }) => {
         },
         {
           title: 'Fazendo',
-          creatable: false,
+          creatable: true,
           cards: data.filter((item) => item.status === "DOING")
         },
         {
@@ -49,7 +50,9 @@ export const TasksProvider = ({ children }) => {
     const status = verifyStatusByIndex(toList);
     const task = lists[fromList].cards[from];
 
-    await updateBoardTasks(task.id, status);
+    await updateBoardTasks(task.id, { status });
+
+    getList();
 
     setLists(produce(lists, draft => {
       const dragged = draft[fromList].cards[from];
@@ -64,7 +67,8 @@ export const TasksProvider = ({ children }) => {
     <TasksContext.Provider
       value={{
         lists,
-        move
+        move,
+        getList
       }}
     >
       {children}

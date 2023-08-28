@@ -3,7 +3,8 @@ import { useDrag, useDrop } from 'react-dnd';
 
 import { Container, Label } from './styles';
 import { useTasks } from '../../contexts/tasks';
-import ModalUpdate from '../ModalUpdate';
+import FormUpdate from '../Forms/FormUpdate';
+import Modal from '../Modal';
 
 export default function Card({ data, index, listIndex }) {
   const ref = useRef();
@@ -13,8 +14,6 @@ export default function Card({ data, index, listIndex }) {
 
   const openModal = () => {
     setIsModalOpen(true);
-
-    console.log(data);
   };
 
   const [{ isDragging }, dragRef] = useDrag({
@@ -68,9 +67,11 @@ export default function Card({ data, index, listIndex }) {
         </header>
         <p>{data.content}</p>
         {data.user && <img src={data.user} alt="" />}
-        <span className="edit" onClick={openModal}>...</span>
+        <span className="edit-open-modal" onClick={openModal}>...</span>
       </Container>
-      <ModalUpdate isModalOpen={isModalOpen} setIsModalOpen={() => setIsModalOpen(false)} data={data} />
+      <Modal isModalOpen={isModalOpen} setIsModalOpen={() => setIsModalOpen(false)}>
+        <FormUpdate data={data} setIsModalOpen={setIsModalOpen} />
+      </Modal>
     </>
   );
 }

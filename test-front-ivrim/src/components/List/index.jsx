@@ -6,6 +6,7 @@ import Fake from '../Card/fake';
 import { Container } from './styles';
 import Modal from '../Modal';
 import { useState } from 'react';
+import FormCreate from '../Forms/FormCreate';
 
 export default function List({ data, index: listIndex }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -41,7 +42,9 @@ export default function List({ data, index: listIndex }) {
           <Fake index={data.cards.length} listIndex={listIndex} />
         </ul>
       </Container>
-      <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} listIndex={listIndex} />
+      <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
+        <FormCreate listIndex={listIndex} setIsModalOpen={setIsModalOpen} />
+      </Modal>
     </>
   );
 }

@@ -14,9 +14,10 @@ export const createBoarTasks = async (data) => {
   return response;
 }
 
-export const updateBoardTasks = async (id, status) => {
+export const updateBoardTasks = async (id, data) => {
   const response = await Api.put(`/list/${id}`, {
-    status
+    content: data?.task,
+    status: data?.status
   });
   return response;
 }

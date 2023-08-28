@@ -43,7 +43,7 @@ describe('Board Controller', () => {
     });
   });
 
-  describe('Update task from the board', () => {
+  describe('Delete task from the board', () => {
     it('should delete task by id from the board', async () => {
       await deleteBoardUseCase.execute(1);
     });
