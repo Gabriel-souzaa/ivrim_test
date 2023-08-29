@@ -12,10 +12,10 @@ $ git clone https://github.com/Gabriel-souzaa/ivrim_test.git && cd ivrim_test/ta
 $ npm install
 
 # Execute uma migração para criar suas tabelas de banco de dados com Prisma Migrate
-$ npx prisma migrate dev --name init
+$ npx prisma migrate dev
 
 # Execute os testes para verificar se a aplicação está rodando como deveria
-$ npx run test
+$ npm run test
 
 # inicie o projeto como dev
 $ npm run dev

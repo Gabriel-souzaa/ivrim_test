@@ -3,6 +3,8 @@ import { useTasks } from "../../../contexts/tasks";
 import { updateBoardTasks } from "../../../services/board-tasks.service";
 import Loading from "../../Loading";
 
+import "../../../styles/forms.css";
+
 export default function FormUpdate({ data, setIsModalOpen }) {
   const { getList } = useTasks();
   const [message, setMessage] = useState("");
@@ -35,7 +37,7 @@ export default function FormUpdate({ data, setIsModalOpen }) {
       setTimeout(() => {
         setLoading(false);
         setIsModalOpen(false);
-      }, 2000);
+      }, 1000);
 
     } catch (err) {
       setMessage(err.response.data.message);

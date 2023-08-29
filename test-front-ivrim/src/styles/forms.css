@@ -1,0 +1,39 @@
+h2 {
+  margin-bottom: 20px;
+}
+
+.error-form {
+  color: red;
+  margin: 5px;
+}
+
+.form-container {
+  text-align: center;
+  margin: 50px;
+}
+
+.form {
+  text-align: left;
+  display: inline-block;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.submit-button {
+  background-color: #7159c1;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}

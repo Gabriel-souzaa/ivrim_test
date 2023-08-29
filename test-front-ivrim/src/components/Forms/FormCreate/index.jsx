@@ -4,6 +4,8 @@ import { verifyStatusByIndex } from "../../../hook/verifyStatus";
 import { createBoarTasks } from "../../../services/board-tasks.service";
 import Loading from "../../Loading";
 
+import "../../../styles/forms.css";
+
 export default function FormCreate({ listIndex, setIsModalOpen }) {
   const statusTask = verifyStatusByIndex(listIndex);
   const { getList } = useTasks();
@@ -37,7 +39,7 @@ export default function FormCreate({ listIndex, setIsModalOpen }) {
       setTimeout(() => {
         setLoading(false);
         setIsModalOpen(false);
-      }, 2000);
+      }, 1000);
 
     } catch (err) {
       setMessage(err.response.data.message);
